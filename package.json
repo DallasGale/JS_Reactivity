@@ -1,0 +1,22 @@
+{
+  "name": "vue-static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "live": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:lint": "node node_modules/eslint-watch/bin/esw -w --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.15.3",
+    "eslint-plugin-vue": "^5.2.2",
+    "live-server": "^1.2.1",
+    "vue": "^2.6.9"
+  },
+  "devDependencies": {
+    "eslint-watch": "^5.0.1"
+  }
+}

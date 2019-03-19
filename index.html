@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Vue</title>
+    </head>
+    
+
+
+    <body>
+
+       
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        
+        <script>
+            
+            // Reactivity example
+            // 1. let total = price * quantity; * needs to be saved to some sort of storage device
+            // 2. Run the code
+            // 3. Run stored code again once price or quantity has been updated
+
+            let price = 5;
+            let quantity = 2;
+
+            let total = 0;
+            let reactiveCode = null; // code we are targeting for reactivity
+            let storage = [];
+
+            reactiveCode = () => total = price * quantity
+            
+            record = () => storage.push(reactiveCode) // push r_total into storage array 
+            replay = () => storage.forEach(run => run)    
+            // record() // sends r_target into r_storage
+            reactiveCode() // run target
+
+            console.log(total); // 10
+
+            quantity = 10
+            record();
+            reactiveCode();
+            replay();
+            console.log(total); // 50
+
+        </script>
+    </body>
+</html>
