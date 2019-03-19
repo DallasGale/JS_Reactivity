@@ -41,24 +41,16 @@ record = () => storage.push(reactiveCode);
 replay = () => storage.forEach(rCode => rCode)
 ```
 
-Now we log the initial total...
+Log the initial total.
 ```javascript
 reactiveCode();
-
 console.log(total) // 10
+```
 
-// Let's update the quantity...
-quantity = 10;
-
-console.log(total) // 10
-
-// ...but we need to run the reactive functions to see the update
+Log the updated total.
+```javascript
 record();
 reactiveCode();
 replay();
-
 console.log(total) // 50
-
-
-
 ```
